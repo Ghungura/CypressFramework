@@ -5,7 +5,6 @@
   "main": "index.js",
  
     "scripts": {
-      "build": "cross-env ./node_modules/typescript/bin/tsc -p ./js/ && node ./node_modules/browserify/bin/cmd ./js/app.js -o ./js/bundle.js",
       "cypress:open": "cypress open",
       "cypress:run": "cypress run"
   },
