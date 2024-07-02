@@ -2,14 +2,12 @@ name: End-to-end tests
 'on':
   - push
 jobs:
-  All Test:
+  All_Test:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.0
-      - name: Cypress run
-        uses: cypress-io/github-action@v4.1.0
-Single test:
+  Single_test: null
   runs-on: ubuntu-22.04
   steps:
     - name: Checkout code
