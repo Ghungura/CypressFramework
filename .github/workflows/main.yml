@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.0
-  Single_test: null
+  Single_test:
   runs-on: ubuntu-22.04
   steps:
     - name: Checkout code
