@@ -13,4 +13,5 @@ jobs:
         run: npm install
       - name: Run smoke script
         run: npm run cypress:run_spec
+      - name: Run Cypress GitHub Action
         uses: cypress-io/github-action@v4.1.0
