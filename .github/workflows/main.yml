@@ -3,17 +3,40 @@ on:
   push:
     branches:
       - main
+
 jobs:
   Single_test:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v4.1.0
+
       - name: Install dependencies
         run: npm install
+
       - name: Verify Cypress binary
         run: npm install cypress --force
+
       - name: Run smoke script
         run: npm run cypress:run_spec
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v4.1.0
+
+  All_test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.1.0
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Verify Cypress binary
+        run: npm install cypress --force
+
+      - name: Run smoke script
+        run: npm run cypress:run
+
       - name: Run Cypress tests
         uses: cypress-io/github-action@v4.1.0
