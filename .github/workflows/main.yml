@@ -1,13 +1,15 @@
 name: End-to-end tests
-'on':
-  - push
+on:
+  push:
+    branches:
+      - main
 jobs:
   Single_test:
-  runs-on: ubuntu-22.04
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v4.1.0
-    - name: Install dependencies
-      run: npm install
-    - name: Run smoke script
-      run: 'npm run cypress:run_spec'
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.1.0
+      - name: Install dependencies
+        run: npm install
+      - name: Run smoke script
+        run: npm run cypress:run_spec
