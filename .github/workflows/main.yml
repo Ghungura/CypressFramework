@@ -1,6 +1,6 @@
-
 name: End-to-end tests
-on: [push]
+'on':
+  - push
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
@@ -9,18 +9,5 @@ jobs:
         uses: actions/checkout@v4.1.0
       - name: Cypress run
         uses: cypress-io/github-action@v4.1.0
-        jobs:
-  jobs: 
-  cypress-spec:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.0
-      - name: Cypress spec
-      with: cypress:run_spec
-        
-      
-        
-      
-       
-         
+      - name: Run start script
+        run: 'npm run cypress:run_spec'
